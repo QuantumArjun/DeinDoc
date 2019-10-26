@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, flash, redirect
 import itemAPI
 from forms import ButtonForm
 app = Flask(__name__)
@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 cart = {}
 
-app.config['SECRET_KEY'] = ''
+app.config['SECRET_KEY'] = 'dave'
 
 @app.route("/")
 def input():
@@ -19,12 +19,18 @@ def home():
 
 @app.route("/shop")
 def about():
-	
-    return render_template('shop.html', items=itemAPI.createItemDictFromCSV())
+    form = ButtonForm()
+    return render_template('shop.html', items=itemAPI.createItemDictFromCSV(), form=form)
 
 @app.route("/cart")
 def cart():
-	return render_template('cart.html', cart = cart)
+	return render_template('cart.html', cart = itemAPI.createItemDictFromCSV())
 
 if __name__ == '__main__':
     app.run(debug=True)
+def register():
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        flash(f'Account created for {form.username.data}!', 'success')
+        return redirect(url_for('home'))
+    return render_template('register.html', title='Register', form=form)
