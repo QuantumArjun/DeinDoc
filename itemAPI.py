@@ -7,6 +7,13 @@ def createItemDictFromCSV():
         items[row['Name']] = Item(row['Name'], row['Price'], row['Description'], row['Link'], row['Disease'],  row['Item_id'])
     return items
 
+def createIDDictFromCSV():
+    items = {}
+    df = pd.read_csv("Products.csv")
+    for index, row in df.iterrows():
+        items[row['Item_id']] = Item(row['Name'], row['Price'], row['Description'], row['Link'], row['Disease'],  row['Item_id'])
+    return items
+
 def newItemToCSV(name, price, description, link, disease, item_id):
     df = pd.read_csv("Products.csv")
     df.loc[len(df)] = [name, price, description, link, disease, item_id]
@@ -28,16 +35,17 @@ def generateIndexTable():
     return indexToName, nameToIndex
     
 
-##def generateIndexTable():
+##def generateOneHotTable():
 ##    item = createItemDictFromCSV()
+##    oneHot = [[1,0,0,0,0],[0,1,0,0,0],[0,0,1,0,0],[0,0,0,1,0],[0,0,0,0,1]]
 ##    diseases = set()
 ##    for item in items.values():
 ##        diseases.add(item.disease)
 ##    diseases = list(diseases)
+##    
 ##    df = pd.read_csv("Products.csv")
-##    lookup = {}
-##    for i in diseases:
-##        lookup 
+##    for disease in diseases:
+##        lookup[disease] = oneHot.pop(0)
 ##
 ##    return indexToName, nameToIndex
 
