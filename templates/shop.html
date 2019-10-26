@@ -1,4 +1,13 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h1>Buy things</h1>
+    {% for item in items.keys() %}
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{items[item].link}}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{item}}</h5>
+                <p class="card-text">{{items[item].description}}</p>
+                <a href="#" class="btn btn-primary">Add to cart</a>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock content %}
