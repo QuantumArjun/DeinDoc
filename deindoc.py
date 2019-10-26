@@ -1,10 +1,10 @@
-from flask import Flask, render_template, url_for, flash, redirect
+from flask import Flask, render_template, url_for, flash, redirect, request
 import itemAPI
 from forms import ButtonForm
 app = Flask(__name__)
 
 
-cart = {}
+cartList = []
 
 app.config['SECRET_KEY'] = 'dave'
 
@@ -25,16 +25,18 @@ def about():
 @app.route("/addToCart")
 def addToCart():
 	item_id = request.args.get('item_id')
-	cart.append(item_id)
+	cartList.append(int(item_id))
+	print(cartList)
 
-	return render_template('shop.html')
+	return about()
 
 @app.route("/cart")
 def cart():
-	return render_template('cart.html', cart = itemAPI.createItemDictFromCSV())
-
+	return render_template('cart.html', items = itemAPI.createIDDictFromCSV(),cartList = cartList)
 if __name__ == '__main__':
     app.run(debug=True)
+
+
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
