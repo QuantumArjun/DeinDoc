@@ -4,19 +4,19 @@
     {%set sum = [0] %} 
 
     {% for item in cart.keys() %}
-  <div class="card-group">
+
         <div class="col-sm-6">
           <div class="card" style="width: 18rem;">
               <!--<img class="card-img-top" src="{{cart[item].link}}" alt="Card image cap"> -->
                 <div class="card-body">
                     <h5 class="card-title">{{item}}</h5>
-                    <p class="card-text">{{cart[item].price}}</p>
+                    <p class="card-text"> {{cart[item].price}}</p>
                    {% if sum.append(sum.pop() + cart[item].price) %}{% endif %} {# increment count by 1 #}        
                     
                 </div>
             </div>
         </div>
-        </div>
+        
     {% endfor %}
  <p> Total price: {{sum}} </p>
 
