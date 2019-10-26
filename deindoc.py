@@ -22,6 +22,13 @@ def about():
     form = ButtonForm()
     return render_template('shop.html', items=itemAPI.createItemDictFromCSV(), form=form)
 
+@app.route("/addToCart")
+def addToCart():
+	item_id = request.args.get('item_id')
+	cart.append(item_id)
+
+	return render_template('shop.html')
+
 @app.route("/cart")
 def cart():
 	return render_template('cart.html', cart = itemAPI.createItemDictFromCSV())
