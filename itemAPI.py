@@ -1,6 +1,7 @@
 import pandas as pd
 from sklearn.preprocessing import OneHotEncoder
 
+
 def createItemDictFromCSV():
     items = {}
     df = pd.read_csv("Products.csv")
