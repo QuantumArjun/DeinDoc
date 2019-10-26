@@ -29,18 +29,15 @@ def generateIndexTable():
     return indexToName, nameToIndex
     
 
+def generateOneHotEncoding(df, name):
+    enc = OneHotEncoder()
 
-##    df = pd.read_csv("Products.csv")
-##    enc = preprocessing.OneHotEncoder()
-##
-##    # 2. FIT
-##    enc.fit(df["Disease"])
-##
-##    # 3. Transform
-##    onehotlabels = enc.transform().toarray()
-##    onehotlabels.shape
-##
-##    return indexToName, nameToIndex
+    # 2. FIT
+    enc.fit(df[name])
+
+    # 3. Transform
+    onehotlabels = enc.transform(df[name]).toarray()
+    df[name] = onehotlabels
 
 class Item:
     def __init__(self, name, price, description, link, disease, item_id):
