@@ -1,7 +1,6 @@
 import pandas as pd
 from sklearn.preprocessing import OneHotEncoder
 
-
 def createItemDictFromCSV():
     items = {}
     df = pd.read_csv("Products.csv")
@@ -30,18 +29,18 @@ def generateIndexTable():
     return indexToName, nameToIndex
     
 
-def generateOneHotEncoding():
-    df = pd.read_csv("Products.csv")
-    enc = preprocessing.OneHotEncoder()
 
-    # 2. FIT
-    enc.fit(df["disease"])
-
-    # 3. Transform
-    onehotlabels = enc.transform(X_2).toarray()
-    onehotlabels.shape
-
-    return indexToName, nameToIndex
+##    df = pd.read_csv("Products.csv")
+##    enc = preprocessing.OneHotEncoder()
+##
+##    # 2. FIT
+##    enc.fit(df["Disease"])
+##
+##    # 3. Transform
+##    onehotlabels = enc.transform().toarray()
+##    onehotlabels.shape
+##
+##    return indexToName, nameToIndex
 
 class Item:
     def __init__(self, name, price, description, link, disease, item_id):
