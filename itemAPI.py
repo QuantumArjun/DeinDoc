@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 def createItemDictFromCSV():
     items = {}
     df = pd.read_csv("Products.csv")
