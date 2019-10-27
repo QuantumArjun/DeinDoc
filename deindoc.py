@@ -72,7 +72,8 @@ def addToCart():
 def checkout():
     items = itemAPI.createIDDictFromCSV()
     for item in cartList:
-        pushOrder(item, items)
+        if item < 28:
+            pushOrder(item, items)
     cartList.clear()
 
     return about()
