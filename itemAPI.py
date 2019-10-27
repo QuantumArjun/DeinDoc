@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy
-
+import pickle
+from sklearn.neural_network import MLPClassifier
 
 def createItemDictFromCSV():
     items = {}
@@ -33,7 +34,7 @@ def generateIndexTable():
     for index, row in df.iterrows():
         indexToName[index] = row['Name']
         nameToIndex[row['Name']] = index
-
+    
     return indexToName, nameToIndex
     
 
@@ -51,6 +52,28 @@ def generateOneHotTable():
 
     return lookup
 
+def loadModelDict():
+    diseases = set()
+    items = createItemDictFromCSV()
+    for item in items.values():
+        diseases.add(item.disease)
+    diseases = list(diseases)
+    model = pickle.load(open('model.sav', 'rb'))
+    indexToName, nameToIndex = generateIndexTable()
+    itemDict = {}
+    for disease in diseases:
+        tempList = []
+        for i in range(0, 25):
+            oneHotLookup = generateOneHotTable()
+            data = [[i, oneHotLookup[disease]]]
+            test = pd.DataFrame(data, columns = ['Name', 'Disease'])
+
+            if (model.predict_proba(test)[0][1] > .32):
+                tempList.append(indexToName[i])
+
+        itemDict[disease] = tempList
+    return itemDict
+    
 
 class Item:
     def __init__(self, name, price, description, link, disease, item_id):
