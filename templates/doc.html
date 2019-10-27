@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-  <!--<div class="row" style= "padding-bottom:100rem;"> -->
+ 
     <div class="card-group">
     {% for item in items.keys() %}
         <div class="col-sm-6">
@@ -8,10 +8,13 @@
               <img class="card-img-top" src="{{items[item].link}}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{item}}</h5>
+                    <p class="card-text"> Specialty: {{items[item].specialty}}</p>
+                    <p class="card-text"> Rating: {{items[item].rating}} Stars</p>
                     <p class="card-text">{{items[item].description}}</p>
 
 
-                    <a href= "{{ url_for('addToCart', item_id = items[item].item_id) }}" class="btn btn-primary">Choose</a>
+
+                 
                     
                 </div>
             </div>

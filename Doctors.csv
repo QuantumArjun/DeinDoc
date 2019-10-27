@@ -1,11 +1,11 @@
-﻿Name,Rating,Link,Specialty,Contact
-John H. Watson,3,https://hcplive.s3.amazonaws.com/v1_media/_image/happydoctor.jpg,flu,doc1@doctors.com
-T.J. Eckleburg,4,https://www.thehealthy.com/wp-content/uploads/2017/09/02_doctor_Insider-Tips-to-Choosing-the-Best-Primary-Care-Doctor_519507367_Stokkete.jpg,Shingles,doc2@doctors.com
-Henry Wu,5,https://static7.depositphotos.com/1158045/696/i/950/depositphotos_6963142-stock-photo-smiling-doctor-portrait.jpg,Stomach Virus,doc3@doctors.com
-Gegory House,4,https://image.freepik.com/free-photo/doctor-smiling-offering-hand_23-2148075683.jpg,Stomach Virus,doc4@doctors.com
-Doc Daneeka,4,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSam3Rhv-Btm_8w_yxd5VsNXdNNCGQKEKf6BMnVSnw_78cWMPVJ&s,Strep Throat,doc5@doctors.com
-Victor Frankenstein,5,http://www.suttonsilver.co.uk/wp-content/uploads/blog-harold-05.jpg,Strep Throat,doc6@doctors.com
-John Dolittle,2,https://img.medscape.com/thumbnail_library/dt_140605_serious_male_doctor_hospital_800x600.jpg,Asthma,doc7@doctors.com
-Isaac Kleiner,4,https://www.thebalancecareers.com/thmb/d5YE0wGe320WuzyhYFiTv_45Bng=/3414x3414/smart/filters:no_upscale()/doctor-with-stethoscope-in-hospital-642394515-5aa9a0b8a9d4f90037431454.jpg,Asthma,doc8@doctors.com
-Angela Ziegler,3,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw_QbP2KLfTyJ2IhKo2ceDaAGslw0AuGz6MlXprXFRy03yecIXaw&s,Shingles,doc9@doctors.com
-Ye Olde Plague Man,1,https://i.etsystatic.com/5288709/r/il/1f54aa/1290118395/il_570xN.1290118395_7fby.jpg,flu,doc10@doctors.com
+﻿Name,Rating,Link,Specialty,Contact,Doc_id
+John H. Watson,3,https://hcplive.s3.amazonaws.com/v1_media/_image/happydoctor.jpg,flu,doc1@doctors.com,28
+T.J. Eckleburg,4,https://www.thehealthy.com/wp-content/uploads/2017/09/02_doctor_Insider-Tips-to-Choosing-the-Best-Primary-Care-Doctor_519507367_Stokkete.jpg,Shingles,doc2@doctors.com,29
+Henry Wu,5,https://static7.depositphotos.com/1158045/696/i/950/depositphotos_6963142-stock-photo-smiling-doctor-portrait.jpg,Stomach Virus,doc3@doctors.com,30
+Gegory House,4,https://image.freepik.com/free-photo/doctor-smiling-offering-hand_23-2148075683.jpg,Stomach Virus,doc4@doctors.com,31
+Doc Daneeka,4,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSam3Rhv-Btm_8w_yxd5VsNXdNNCGQKEKf6BMnVSnw_78cWMPVJ&s,Strep Throat,doc5@doctors.com,32
+Victor Frankenstein,5,http://www.suttonsilver.co.uk/wp-content/uploads/blog-harold-05.jpg,Strep Throat,doc6@doctors.com,33
+John Dolittle,2,https://img.medscape.com/thumbnail_library/dt_140605_serious_male_doctor_hospital_800x600.jpg,Asthma,doc7@doctors.com,34
+Isaac Kleiner,4,https://www.thebalancecareers.com/thmb/d5YE0wGe320WuzyhYFiTv_45Bng=/3414x3414/smart/filters:no_upscale()/doctor-with-stethoscope-in-hospital-642394515-5aa9a0b8a9d4f90037431454.jpg,Asthma,doc8@doctors.com,35
+Angela Ziegler,3,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw_QbP2KLfTyJ2IhKo2ceDaAGslw0AuGz6MlXprXFRy03yecIXaw&s,Shingles,doc9@doctors.com,36
+Ye Olde Plague Man,1,https://i.etsystatic.com/5288709/r/il/1f54aa/1290118395/il_570xN.1290118395_7fby.jpg,flu,doc10@doctors.com,37
