@@ -19,7 +19,7 @@ y = df['Show']
 
 clf = MLPClassifier(activation='logistic', hidden_layer_sizes=(18,), solver='lbfgs')
 clf.fit(x, y)
-for i in range(0, 25):
+for i in range(1, 27):
     data = [[i, 1]]
     test = pd.DataFrame(data, columns = ['Name', 'Disease'])
 

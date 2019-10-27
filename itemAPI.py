@@ -41,10 +41,7 @@ def generateIndexTable():
 def generateOneHotTable():
     items = createItemDictFromCSV()
     oneHot = [1,2,3,4,5]
-    diseases = set()
-    for item in items.values():
-        diseases.add(item.disease)
-    diseases = list(diseases)
+    diseases = ['Asthma', 'Shingles', 'flu', 'Stomach Virus', 'Strep Throat']
     lookup = {}
     df = pd.read_csv("Products.csv")
     for disease in diseases:
@@ -63,7 +60,7 @@ def loadModelDict():
     itemDict = {}
     for disease in diseases:
         tempList = []
-        for i in range(0, 25):
+        for i in range(1, 27):
             oneHotLookup = generateOneHotTable()
             data = [[i, oneHotLookup[disease]]]
             test = pd.DataFrame(data, columns = ['Name', 'Disease'])
