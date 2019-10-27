@@ -1,0 +1,136 @@
+Name,Disease,Show
+25,Shingles,1
+10,Shingles,0
+4,Shingles,0
+16,Shingles,0
+20,Shingles,0
+9,Shingles,0
+21,Shingles,0
+24,Shingles,1
+13,Shingles,0
+12,Shingles,0
+26,Shingles,1
+0,Shingles,0
+11,Shingles,0
+15,Shingles,0
+17,Shingles,0
+5,Shingles,0
+1,Shingles,0
+7,Shingles,0
+22,Shingles,1
+18,Shingles,0
+6,Shingles,0
+14,Shingles,0
+2,Shingles,0
+19,Shingles,0
+8,Shingles,0
+23,Shingles,1
+3,Shingles,0
+25,Asthma,0
+10,Asthma,0
+4,Asthma,0
+16,Asthma,0
+20,Asthma,1
+9,Asthma,0
+21,Asthma,1
+24,Asthma,0
+13,Asthma,0
+12,Asthma,0
+26,Asthma,0
+0,Asthma,0
+11,Asthma,0
+15,Asthma,0
+17,Asthma,1
+5,Asthma,0
+1,Asthma,0
+7,Asthma,0
+22,Asthma,0
+18,Asthma,1
+6,Asthma,0
+14,Asthma,0
+2,Asthma,0
+19,Asthma,1
+8,Asthma,0
+23,Asthma,0
+3,Asthma,0
+25,Strep Throat,0
+10,Strep Throat,0
+4,Strep Throat,0
+16,Strep Throat,1
+20,Strep Throat,0
+9,Strep Throat,0
+21,Strep Throat,0
+24,Strep Throat,0
+13,Strep Throat,1
+12,Strep Throat,0
+26,Strep Throat,0
+0,Strep Throat,0
+11,Strep Throat,0
+15,Strep Throat,1
+17,Strep Throat,0
+5,Strep Throat,0
+1,Strep Throat,0
+7,Strep Throat,0
+22,Strep Throat,0
+18,Strep Throat,0
+6,Strep Throat,0
+14,Strep Throat,1
+2,Strep Throat,0
+19,Strep Throat,0
+8,Strep Throat,0
+23,Strep Throat,0
+3,Strep Throat,0
+25,flu,0
+10,flu,0
+4,flu,1
+16,flu,0
+20,flu,0
+9,flu,0
+21,flu,0
+24,flu,0
+13,flu,0
+12,flu,0
+26,flu,0
+0,flu,1
+11,flu,0
+15,flu,0
+17,flu,0
+5,flu,0
+1,flu,1
+7,flu,1
+22,flu,0
+18,flu,0
+6,flu,1
+14,flu,0
+2,flu,1
+19,flu,0
+8,flu,0
+23,flu,0
+3,flu,1
+25,Stomach Virus,0
+10,Stomach Virus,1
+4,Stomach Virus,0
+16,Stomach Virus,0
+20,Stomach Virus,0
+9,Stomach Virus,1
+21,Stomach Virus,0
+24,Stomach Virus,0
+13,Stomach Virus,0
+12,Stomach Virus,1
+26,Stomach Virus,0
+0,Stomach Virus,0
+11,Stomach Virus,1
+15,Stomach Virus,0
+17,Stomach Virus,0
+5,Stomach Virus,1
+1,Stomach Virus,0
+7,Stomach Virus,0
+22,Stomach Virus,0
+18,Stomach Virus,0
+6,Stomach Virus,0
+14,Stomach Virus,0
+2,Stomach Virus,0
+19,Stomach Virus,0
+8,Stomach Virus,1
+23,Stomach Virus,0
+3,Stomach Virus,0

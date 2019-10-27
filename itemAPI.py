@@ -1,4 +1,6 @@
 import pandas as pd
+import numpy
+
 
 def createItemDictFromCSV():
     items = {}
@@ -35,19 +37,19 @@ def generateIndexTable():
     return indexToName, nameToIndex
     
 
-##def generateOneHotTable():
-##    item = createItemDictFromCSV()
-##    oneHot = [[1,0,0,0,0],[0,1,0,0,0],[0,0,1,0,0],[0,0,0,1,0],[0,0,0,0,1]]
-##    diseases = set()
-##    for item in items.values():
-##        diseases.add(item.disease)
-##    diseases = list(diseases)
-##    
-##    df = pd.read_csv("Products.csv")
-##    for disease in diseases:
-##        lookup[disease] = oneHot.pop(0)
-##
-##    return indexToName, nameToIndex
+def generateOneHotTable():
+    items = createItemDictFromCSV()
+    oneHot = [1,2,3,4,5]
+    diseases = set()
+    for item in items.values():
+        diseases.add(item.disease)
+    diseases = list(diseases)
+    lookup = {}
+    df = pd.read_csv("Products.csv")
+    for disease in diseases:
+        lookup[disease] = oneHot.pop(0)
+
+    return lookup
 
 
 class Item:

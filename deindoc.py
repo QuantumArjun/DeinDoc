@@ -6,6 +6,7 @@ import requests
 import http.client
 app = Flask(__name__)
 
+model = pickle.load(open('model.sav', 'rb'))
 
 cartList = []
 
@@ -100,7 +101,7 @@ def home():
 @app.route("/shop")
 def about():
     form = ButtonForm()
-    return render_template('shop.html', items=itemAPI.createItemDictFromCSV(), form=form)
+    return render_template('shop.html', items=itemAPI.createItemDictFromCSV(), form=formm model=model)
 
 @app.route("/addToCart")
 def addToCart():
