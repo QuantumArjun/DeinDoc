@@ -21,15 +21,15 @@ conn = http.client.HTTPSConnection("api-reg.ncrsilverlab.com")
 payload = "{ \
   \"Orders\": [ \
     { \
-      \"IsClosed\": true, \
-      \"OrderType\": \"string\",\
-      \"OrderNumber\": \"string\",\
+      \"IsClosed\": false, \
+      \"OrderType\": \"cash\",\
+      \"OrderNumber\": \"0\",\
       \"OrderDateTime\": \"2019-10-26T23:49:56.932Z\",\
       \"OrderDueDateTime\": \"2019-10-26T23:49:56.932Z\", \
       \"IsPaid\": true,\
       \"Customer\": {\
-        \"CustomerId\": 0,\
-        \"CustomerName\": \"string\",\
+        \"CustomerId\": 1,\
+        \"CustomerName\": \"John Stevenson\",\
         \"Email\": \"string\",\
         \"PhoneNumber\": \"string\",\
         \"Address1\": \"string\",\
@@ -56,20 +56,20 @@ payload = "{ \
       ],\
       \"LineItems\": [\
         {\
-          \"ItemId\": 0,\
+          \"ItemId\": 1,\
           \"ExternalItemId\": \"string\",\
           \"SKU\": \"string\",\
-          \"ItemName\": \"string\",\
-          \"Quantity\": 0,\
-          \"UnitPrice\": 0,\
-          \"UnitSellPrice\": 0,\
+          \"ItemName\": \"Advil\",\
+          \"Quantity\": 1,\
+          \"UnitPrice\": 2.99,\
+          \"UnitSellPrice\": 2.99,\
           \"ExtendedSellPrice\": 0,\
           \"Modifiers\": [\
             { \
               \"ItemMasterId\": 0,\
               \"ExternalItemId\": \"string\",\
               \"SKU\": \"string\",\
-              \"ItemName\": \"string\",\
+              \"ItemName\": \"advil\",\
               \"UnitSellPrice\": 0,\
               \"ModifierCodeType\": 0,\
               \"ModifierGroupId\": 0\
