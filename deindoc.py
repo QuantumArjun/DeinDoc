@@ -8,7 +8,7 @@ import http.client
 app = Flask(__name__)
 
 cartList = []
-disease = "Stomach Virus"
+currDisease = []
 diseaseList = ['Asthma', 'Shingles', 'flu', 'Stomach Virus', 'Strep Throat']
 
 
@@ -48,10 +48,14 @@ def home():
 @app.route("/shop")
 def shop():
     form = ButtonForm()
-    diseaseTemp = request.args.get('disease')
-    if diseaseTemp in diseaseList:
-        disease = diseaseTemp
-    return render_template('shop.html', items=itemAPI.createItemDictFromCSV(), form=form, disease=disease, designated=itemAPI.loadModelDict())
+    return render_template('shop.html', items=itemAPI.createItemDictFromCSV(), form=form, disease = currDisease[0], designated=itemAPI.loadModelDict())
+
+@app.route("/diseasePlaceholder")
+def diseasePlaceholder():
+    disease = request.args.get('disease')
+    currDisease.clear()
+    currDisease.append(disease)
+    return shop()
 
 @app.route("/addToCart")
 def addToCart():
@@ -63,7 +67,7 @@ def addToCart():
 
 @app.route("/cart")
 def cart():
-	return render_template('cart.html', items = itemAPI.createIDDictFromCSV(),cartList = cartList)
+	return render_template('cart.html', items = itemAPI.createIDDictFromCSV(), docs = docAPI.createDocIDDictFromCSV(),cartList = cartList)
 
 @app.route("/doc")
 def doc():

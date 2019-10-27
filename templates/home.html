@@ -6,7 +6,7 @@
     {% for disease in diseaseList %}
     <div class="col-sm-6">
         <div class="button" style="width: 18rem;">
-            <a href="{{ url_for('shop', disease = disease) }}" class="btn btn-primary">I have {{disease}}</a>
+            <a href="{{ url_for('diseasePlaceholder', disease = disease) }}" class="btn btn-primary">I have {{disease}}</a>
         </div>
     </div>
     {% endfor %}
