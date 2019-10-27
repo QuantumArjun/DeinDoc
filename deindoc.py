@@ -64,7 +64,7 @@ def shop():
 def diseasePlaceholder():
     disease = request.args.get('disease')
     currDisease.append(disease)
-    return shop()
+    return doc()
 
 @app.route("/addToCart")
 def addToCart():
