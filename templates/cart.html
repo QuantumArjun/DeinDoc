@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
   <!--<div class="row" style= "padding-bottom:100rem;"> -->
-    {%set sum = [0] %} 
+    {%set sum= [0] %} 
 
     {% for item in items.keys() %}
 
@@ -12,8 +12,8 @@
               <!--<img class="card-img-top" src="{{items[item].link}}" alt="Card image cap"> -->
                 <div class="card-body">
                     <h5 class="card-title">{{items[item].name}}</h5>
-                    <p class="card-text"> {{items[item].price}}</p>
-                    
+                    <p class="card-text"> ${{items[item].price}}</p>
+                    {% if sum.append(sum.pop() + items[item].price) %}{% endif %} {# increment count by 1 #}
                    
                     
                 </div>
@@ -22,6 +22,6 @@
 
       {%endif%}    
     {% endfor %}
- <p> Total price: {{sum}} </p>
+ <p> Total price: ${{sum}} </p>
 
 {% endblock content %}
