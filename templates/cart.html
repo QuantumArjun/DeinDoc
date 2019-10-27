@@ -3,9 +3,33 @@
   <!--<div class="row" style= "padding-bottom:100rem;"> -->
     {%set sum= [0] %} 
 
+
+    <p> {{cartList}} </p>
+    {% for doc in docs.keys() %}
+    {%if doc in cartList %}
+
+<div class="col-sm-6">
+          <div class="card" style="width: 18rem;">
+              <!--<img class="card-img-top" src="{{items[item].link}}" alt="Card image cap"> -->
+                <div class="card-body">
+                    <h5 class="card-title">{{docs[doc].name}}</h5>
+                    <p class="card-text"> ${{docs[doc].specialty}}</p>
+                    
+                 
+                </div>
+            </div>
+        </div>
+
+
+
+
+    {% endif %}
+    {% endfor %}
+
     {% for item in items.keys() %}
 
       {%if item in cartList %}
+
 
         <div class="col-sm-6">
           <div class="card" style="width: 18rem;">
@@ -13,6 +37,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{items[item].name}}</h5>
                     <p class="card-text"> ${{items[item].price}}</p>
+                    
                  
                 </div>
             </div>

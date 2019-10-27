@@ -12,6 +12,8 @@
                     <p class="card-text"> Rating: {{items[item].rating}} Stars</p>
                     <p class="card-text">{{items[item].description}}</p>
 
+                    <a href= "{{ url_for('addToCart', item_id = items[item].doc_id) }}" class="btn btn-primary">Request</a>
+
 
 
                  
