@@ -13,7 +13,7 @@ api_token = "gAAAAHIHg3TBY-z_dHiJxzMC2D3bKccwl1qA2l57KEpjiIlIB1R-EBRXiM7eFEUC-ex
 client_id = "gt_552463"
 client_secret = "004e007a-004a-0035-4b00-740033006800"
 
-headers = {'Authorization': 'Bearer {0}'.format(api_token)}
+headers = {'Authorization': 'Bearer {0}'.format(api_token), 'Accept': 'application/json'}
 
 
 conn = http.client.HTTPSConnection("api-reg.ncrsilverlab.com")
