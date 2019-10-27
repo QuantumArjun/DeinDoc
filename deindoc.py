@@ -21,9 +21,8 @@ conn = http.client.HTTPSConnection("api-reg.ncrsilverlab.com")
 payload = "{ \
   \"Orders\": [ \
     { \
-      \"IsClosed\": false, \
-      \"OrderType\": \"cash\",\
-      \"OrderNumber\": \"0\",\
+      \"IsClosed\": true, \
+      \"OrderNumber\": \"string\",\
       \"OrderDateTime\": \"2019-10-26T23:49:56.932Z\",\
       \"OrderDueDateTime\": \"2019-10-26T23:49:56.932Z\", \
       \"IsPaid\": true,\
