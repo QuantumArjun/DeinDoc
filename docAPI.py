@@ -9,6 +9,13 @@ def createDocDictFromCSV():
         items[row['Name']] = Doc(row['Name'], row['Rating'], row['Link'], row['Specialty'], row['Contact'], row['Doc_id'])
     return items
 
+def createDocIDDictFromCSV():
+    items = {}
+    df = pd.read_csv("Doctors.csv")
+    for index, row in df.iterrows():
+        items[row['Doc_id']] = Doc(row['Name'], row['Rating'], row['Link'], row['Specialty'], row['Contact'], row['Doc_id'])
+    return items
+
 
 class Doc:
     def __init__(self, name, rating, link, specialty, contact,doc_id):
