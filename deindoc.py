@@ -27,8 +27,8 @@ payload = "{ \
       \"OrderDueDateTime\": \"2019-10-26T23:49:56.932Z\", \
       \"IsPaid\": true,\
       \"Customer\": {\
-        \"CustomerId\": 1,\
-        \"CustomerName\": \"John Stevenson\",\
+        \"CustomerId\": 0,\
+        \"CustomerName\": \"string\",\
         \"Email\": \"string\",\
         \"PhoneNumber\": \"string\",\
         \"Address1\": \"string\",\
@@ -45,34 +45,16 @@ payload = "{ \
       \"TableReference\": \"string\",\
       \"TaxAmount\": 0,\
       \"TipAmount\": 0,\
-      \"Discounts\": [\
-        {\
-          \"DiscountId\": 0,\
-          \"ExternalDiscountId\": \"string\",\
-          \"DiscountName\": \"string\",\
-          \"Amount\": 0\
-        }\
-      ],\
       \"LineItems\": [\
         {\
           \"ItemId\": 1,\
-          \"ExternalItemId\": \"string\",\
-          \"SKU\": \"string\",\
-          \"ItemName\": \"Advil\",\
+          \"ExternalItemId\": \"1711677\",\
+          \"ItemName\": \"string\",\
           \"Quantity\": 1,\
-          \"UnitPrice\": 2.99,\
-          \"UnitSellPrice\": 2.99,\
+          \"UnitPrice\": 0,\
+          \"UnitSellPrice\": 0,\
           \"ExtendedSellPrice\": 0,\
           \"Modifiers\": [\
-            { \
-              \"ItemMasterId\": 0,\
-              \"ExternalItemId\": \"string\",\
-              \"SKU\": \"string\",\
-              \"ItemName\": \"advil\",\
-              \"UnitSellPrice\": 0,\
-              \"ModifierCodeType\": 0,\
-              \"ModifierGroupId\": 0\
-            }\
           ],\
           \"Notes\": [\
             \"string\" \
