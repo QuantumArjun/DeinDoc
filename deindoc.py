@@ -8,7 +8,7 @@ import http.client
 app = Flask(__name__)
 
 cartList = []
-currDisease = []
+currDisease = ['Asthma']
 diseaseList = ['Asthma', 'Shingles', 'flu', 'Stomach Virus', 'Strep Throat']
 
 
@@ -48,12 +48,11 @@ def home():
 @app.route("/shop")
 def shop():
     form = ButtonForm()
-    return render_template('shop.html', items=itemAPI.createItemDictFromCSV(), form=form, disease = currDisease[0], designated=itemAPI.loadModelDict())
+    return render_template('shop.html', items=itemAPI.createItemDictFromCSV(), form=form, disease = currDisease[len(currDisease) -  1], designated=itemAPI.loadModelDict())
 
 @app.route("/diseasePlaceholder")
 def diseasePlaceholder():
     disease = request.args.get('disease')
-    currDisease.clear()
     currDisease.append(disease)
     return shop()
 
