@@ -1,4 +1,14 @@
 ﻿{% extends "layout.html" %}
 {% block content %}
-    <h1> input box here</h1>
+<h1> Introducing MediLink: The AI Powered Medical Marketplace</h1>
+<p> MediLink was developed as an extention to Anthem's AI powered medical diagnosis system. This system assumes that the user knows their condition, then uses machine learning to generate OTC medicine recommendations for their condition. These recommendations were trained off of a dataset scraped from the internet linking diseases to medicines commonly purchased for treatment. In the future, NCR's Transaction History API can be integrated to add additional features for training. Users can also request Teledoc services from a database of qualified doctors to prescribe other medications. Once medicines / doctorial services are requested, this system integrates NCR's Order API to seamlessly generate and push order requests to the API. Once users begin creating orders, these orders can be fed into the recommendation algorithm to further tailor medical results on a per-user basis. </p>
+<h2> Features Include: </h2>
+<ul>
+
+    <li>  AI Powered Marketplace for OTC Medications </li>
+    <ul> <li> Neural Network Binary Classification (0, 1) for (hide, recommend). Model training is included in model.py; Data generation is included within generatedata.py. To integrate transaction data (from NCR's Transaction Data API, Order API, or otherwise): label transaction data with either clicked (0, 1) or ordered (0, 1), depending on desired modeling. Can also implement user history for personalized recommendations. </li></ul>
+    <li>  Doctor Request System for Teledoc Conferences </li>
+    <li>  Integration with NCR Order API for seamless order creation and fulfillment </li>
+    <li>  And more! </li>
+</ul>
 {% endblock content %}
