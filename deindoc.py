@@ -4,6 +4,7 @@ from forms import ButtonForm
 import json
 import requests
 import http.client
+import pickle
 app = Flask(__name__)
 
 model = pickle.load(open('model.sav', 'rb'))
