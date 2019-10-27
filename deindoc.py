@@ -8,7 +8,7 @@ import http.client
 app = Flask(__name__)
 
 cartList = []
-
+disease = "flu"
 
 url = "https://api-reg-apigee.ncrsilverlab.com/v2/orders"
 
@@ -43,7 +43,7 @@ def home():
 @app.route("/shop")
 def about():
     form = ButtonForm()
-    return render_template('shop.html', items=itemAPI.createItemDictFromCSV(), form=form, model=model)
+    return render_template('shop.html', items=itemAPI.createItemDictFromCSV(), form=form, disease=disease, designated=itemAPI.loadModelDict())
 
 @app.route("/addToCart")
 def addToCart():
