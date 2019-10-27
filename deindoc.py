@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for, flash, redirect, request
 import itemAPI
+import docAPI
 from forms import ButtonForm
 import json
 import requests
@@ -61,9 +62,7 @@ def cart():
 if __name__ == '__main__':
     app.run(debug=True)
 
-@app.route("/doctors")
-def doctors():
-    return render_template('doc.html', items=docAPI.createDocDictFromCSV())
+
 
 
 def register():
