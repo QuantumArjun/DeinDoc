@@ -8,7 +8,7 @@ import http.client
 app = Flask(__name__)
 
 cartList = []
-disease = "flu"
+disease = "Stomach Virus"
 
 url = "https://api-reg-apigee.ncrsilverlab.com/v2/orders"
 
