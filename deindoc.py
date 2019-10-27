@@ -101,7 +101,7 @@ def home():
 @app.route("/shop")
 def about():
     form = ButtonForm()
-    return render_template('shop.html', items=itemAPI.createItemDictFromCSV(), form=formm model=model)
+    return render_template('shop.html', items=itemAPI.createItemDictFromCSV(), form=form, model=model)
 
 @app.route("/addToCart")
 def addToCart():
