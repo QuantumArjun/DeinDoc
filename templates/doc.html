@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+var item_id
+  <!--<div class="row" style= "padding-bottom:100rem;"> -->
+    <div class="card-group">
+    {% for item in items.keys() %}
+        <div class="col-sm-6">
+          <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="{{items[item].link}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{item}}</h5>
+                    <p class="card-text">{{items[item].description}}</p>
+
+
+                    <a href= "{{ url_for('addToCart', item_id = items[item].item_id) }}" class="btn btn-primary">Add to cart</a>
+                    
+                </div>
+            </div>
+        </div>
+    
+    {% endfor %}
+    </div>
+
+{% endblock content %}
