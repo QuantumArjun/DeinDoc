@@ -11,7 +11,7 @@ model = pickle.load(open('model.sav', 'rb'))
 
 cartList = []
 
-api_token = "gAAAAHIHg3TBY-z_dHiJxzMC2D3bKccwl1qA2l57KEpjiIlIB1R-EBRXiM7eFEUC-exTUCZPO5jinpRUgQl3fdxPeYZMRIHfGL6zItdp976F8M7KVIVF6LTosnUCzjR2T7eHwtvR8CTXhypo0OiZA6BxEQw-hh3x3bZFufaBm8WuLacO9AAAAIAAAACO6-ZxkFpS15OAl_RvlsxrgTYO_6ZhkLJseJgojCwxxAy-WJ4512VcrtP_JSTw2lTDJwz4tptYoBpjKC9wA84XxKPY2ROGv1Lw88dw4BVytidEJaVJC-HDrogxmLx9J_shXR0HXkK_vPUmG1bcLbawGtBfQQdatGY1ZSifYPD3b2qdyHmDbqhZSJuxwPVpsmh0cWMNgjQNG3s1x6SUtM_tlbKBlayh6oTbsdrtXy7lLBSDuGDsxWTrZ8pOWtLF9nWTz8Kfy4JaJ_twaGvHoxiLhiN3SD7zHwAfu1PNZOX_zDgP9hAwgMLTLj-bZt9xKh8"
+api_token = "gAAAAMA_MWOas38X6QqzABin1xvPd5RiCaDTYTzbjcJlGVhDO8zfEFAIs_F4OM_KTPhhhg75uZYLEXEys3BtdzGCU5awJLEx6y86yEQ4DbuHc0eygkQqNe_IVzRLB2y_kz72eaYNg5Gmb1Nyo6XCcTtNTu7o9oWAdMY9TFP490lRtati9AAAAIAAAABLQmFuEkaDIEHkuosYILnK5nV1XE647K1h7cvzx5Fai7R3rsWAImg-PKoW8Sahyj2nge7DDEhC0FFs8BC8NJFNgtiAEowuECD6ZJ88ze66ma-qpe2RgBdey8WdVjl7LTY-JYoEGhPyT21yzUpFgl_1r8QXKd7UgA_vXosFJC2vMBb_bgrtScAiVLD8oL6MPFAFyTkVR7H4Dk_s3zCsO6gTQlmT8cIjn86kW6t-p8ANySY7uFAsHNqib5qHz-_SHxVlhiusFZdl0bjQxNk3y-sEmpqTe7rxzke7fzenADutQKuqr2ONexylvlUvLhbY0"
 client_id = "gt_552463"
 client_secret = "004e007a-004a-0035-4b00-740033006800"
 
@@ -20,67 +20,9 @@ headers = {'Authorization': 'Bearer {0}'.format(api_token), 'Accept': 'applicati
 
 conn = http.client.HTTPSConnection("api-reg.ncrsilverlab.com")
 
-payload = "{ \
-  \"Orders\": [ \
-    { \
-      \"IsClosed\": true, \
-      \"OrderNumber\": \"string\",\
-      \"OrderDateTime\": \"2019-10-26T23:49:56.932Z\",\
-      \"OrderDueDateTime\": \"2019-10-26T23:49:56.932Z\", \
-      \"IsPaid\": true,\
-      \"Customer\": {\
-        \"CustomerId\": 0,\
-        \"CustomerName\": \"string\",\
-        \"Email\": \"string\",\
-        \"PhoneNumber\": \"string\",\
-        \"Address1\": \"string\",\
-        \"Address2\": \"string\",\
-        \"Address3\": \"string\",\
-        \"City\": \"string\",\
-        \"State\": \"string\",\
-        \"ZipCode\": \"string\"\
-      },\
-      \"CustomerId\": 0,\
-      \"CustomerName\": \"string\",\
-      \"Email\": \"string\",\
-      \"PhoneNumber\": \"string\",\
-      \"TableReference\": \"string\",\
-      \"TaxAmount\": 0,\
-      \"TipAmount\": 0,\
-      \"LineItems\": [\
-        {\
-          \"ItemId\": 1,\
-          \"ExternalItemId\": \"1711677\",\
-          \"ItemName\": \"string\",\
-          \"Quantity\": 1,\
-          \"UnitPrice\": 0,\
-          \"UnitSellPrice\": 0,\
-          \"ExtendedSellPrice\": 0,\
-          \"Modifiers\": [\
-          ],\
-          \"Notes\": [\
-            \"string\" \
-          ],\
-          \"BagName\": \"string\"\
-        }\
-      ],\
-      \"Notes\": [\
-        \"string\" \
-      ],\
-      \"KitchenLeadTimeInMinutes\": 0,\
-      \"SkipReceipt\": true,\
-      \"SkipKitchen\": true,\
-      \"Payments\": [\
-        {\
-          \"ExternalPaymentId\": \"string\"\
-        }\
-      ]\
-    }\
-  ],\
-  \"SourceApplicationName\": \"string\"\
-}"
+payload = "{\"Orders\": [{\"IsClosed\":true,\"OrderNumber\":\"string\",\"OrderDateTime\":\"2019-10-27T00:38:56.555Z\",\"OrderDueDateTime\":\"2019-10-27T00:38:56.555Z\",\"IsPaid\":true,\"Customer\":{\"CustomerId\":0,\"CustomerName\":\"string\",\"Email\":\"string\",\"PhoneNumber\":\"string\",\"Address1\":\"string\",\"Address2\":\"string\",\"Address3\":\"string\",\"City\":\"string\",\"State\":\"string\",\"ZipCode\":\"string\"},\"CustomerId\":0,\"CustomerName\":\"string\",\"Email\":\"string\",\"PhoneNumber\":\"string\",\"TableReference\":\"string\",\"TaxAmount\": 0,\"TipAmount\": 0,\"LineItems\":[{\"ExternalItemId\":\"1710184\",\"ItemName\":\"string\",\"Quantity\":1,\"UnitPrice\":0,\"UnitSellPrice\":0,\"ExtendedSellPrice\":0,\"Notes\":[\"string\"],\"BagName\":\"string\"}],\"Notes\":[\"string\"],\"KitchenLeadTimeInMinutes\":0,\"SkipReceipt\":true,\"SkipKitchen\":true,]}],\"SourceApplicationName\":\"string\"}"
 
-conn.request("POST", "/order/orders", payload, headers)
+conn.request("POST", "/orders", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
