@@ -11,25 +11,40 @@ cartList = []
 disease = "Stomach Virus"
 
 url = "https://api-reg-apigee.ncrsilverlab.com/v2/orders"
-
+token = "Bearer gAAAAI9mfh0MQOImPfIq_-t16m5X-YlS9BtuNnduMepspYDEP4Jc5fYU1fJvLM8RviC0O2GaGlqAg-kUdCGXTjQDkKbb4x1NXThxX2Ryixa6YW4kBqqac4BtRAFJa-_s-JZvHONSW6eoPj5oSHwJNhILse3owHP7GHxiVudO35fkeQfV9AAAAIAAAAAOP6dp_eZsmhLbkkeL4T1LUpqVI8j8og3AFaouE-dR_0oWSKCLExotJofDMNaBIQMutYW4LosPe2sUSDtY6Yt58gDSmxJNNGPaFyMSIIWogwBwcC_GGL6FPlZioaRH9_cs0iLO5yO7ykBZllkGl1-W_nPivh70u4KS6nfABjHEiUepedrFjrSVqOHpCsnIXGSGXhLEBB65UiKWQqcKmQ0YDraFpXYaGIOEyp8If3DAuihqlns9PMgCIRqCzC-oLtabvt2GLwNsI6FJYX5vdQOZicOityc5dYjSZXKJiksdYSjPTJ6dpBW9dGxwjyJxMTw"
 querystring = {"store_number":"1"}
-
-payload = "{\n    \n  \"Orders\": [\n    {\n      \"IsClosed\": true,\n      \"OrderNumber\": \"string\",\n      \"OrderDateTime\": \"2019-10-27T00:38:56.555Z\",\n      \"OrderDueDateTime\": \"2019-10-27T00:38:56.555Z\",\n      \"IsPaid\": true,\n      \"Customer\": {\n        \"CustomerId\": 0,\n        \"CustomerName\": \"string\",\n        \"Email\": \"string\",\n        \"PhoneNumber\": \"string\",\n        \"Address1\": \"string\",\n        \"Address2\": \"string\",\n        \"Address3\": \"string\",\n        \"City\": \"string\",\n        \"State\": \"string\",\n        \"ZipCode\": \"string\"\n      },\n      \"CustomerId\": 0,\n      \"CustomerName\": \"string\",\n      \"Email\": \"string\",\n      \"PhoneNumber\": \"string\",\n      \"TableReference\": \"string\",\n      \"TaxAmount\": 0,\n      \"TipAmount\": 0,\n      \"LineItems\": [\n        {\n          \"ExternalItemId\": \"2\",\n        \n          \"ItemName\": \"Ibuprofen\",\n          \"Quantity\": 1,\n          \"UnitPrice\": 2.99,\n          \"UnitSellPrice\": 2.99,\n          \"ExtendedSellPrice\": 2.99,\n          \n          \"Notes\": [\n            \"string\"\n          ],\n          \"BagName\": \"string\"\n        }\n      ],\n      \"Notes\": [\n        \"string\"\n      ],\n      \"KitchenLeadTimeInMinutes\": 0,\n      \"SkipReceipt\": true,\n      \"SkipKitchen\": true\n    }\n  ],\n  \"SourceApplicationName\": \"string\"\n}"
 headers = {
     'Accept': "application/json",
     'Content-Type': "application/json",
     'Host': "api-reg-apigee.ncrsilverlab.com",
-    'Authorization': "Bearer gAAAAK9vGlUfOoq9KZQ9YE-8RNoF-8f_ekV16a2w-_Fg7AGWcwe1H3fiqKQupZd4CLy4lUWKdqqG4K031kdGr1fqWcZzauSrWlg6H2kcO9x8YQpg4nmMgjQuBT9r1ErIy5h7rJ4UR7ImhDtHFc3IdCvvYkdsv_NFUhXNazMVCCENcJ0-9AAAAIAAAAA01H7Ogd1wa1gTr2RJ8ZmapL2jTSGeaPD9p_eS_9BTqExKvbq1OLWSrNjKL5dVyUGY7pJvEuw_ITcd9jNEQjnTfiVTCenoN1wTs1cLpgQxgAV2uXgDy12hqJ3BHW9erT3RCTX-z1IFPBchf6gNv0ZsDCP2tSJt4Brjyl7QzDWjoFvUkJJLwVdcwStWUJtjFcQ3QOS1UYuU7LDsHEo4t6pRZSO8STmFN0zjm0U42MYXbs4ocQD31m6n-aCeTjdVCNQ5ad7RwOJD9_O3oyyUf4FNNzIWis3GiszZI-paI-TsuF5wKBnxxVrWKyTOGQ5xGAY",
+    'Authorization': token,
     'cache-control': "no-cache",
     'Postman-Token': "40677c10-b4da-4d85-acf9-8791f890e36f"
     }
-
-response = requests.request("POST", url, data=payload, headers=headers, params=querystring)
-
-print(response.text)
-
-
 app.config['SECRET_KEY'] = 'dave'
+
+def getAuth():
+    url = "https://api-reg.ncrsilverlab.com/v2/OAuth2/token"
+
+    headers = {
+        'client_id': "gt_552463",
+        'client_secret': "004e007a-004a-0035-4b00-740033006800",
+        'cache-control': "no-cache",
+        'Postman-Token': "96f96790-a161-407b-80e6-7cb4f773a37b"
+        }
+
+    authResponse = requests.request("GET", url, headers=headers)
+    parsed_auth = (json.loads(authResponse.text))
+    token = "Bearer " + parsed_auth["Result"]["AccessToken"]
+
+def pushOrder(item, items):
+    itemNum = str(item)
+    itemName = items[item].name
+    itemPrice = str(items[item].price)
+
+    payload = "{\n    \n  \"Orders\": [\n    {\n      \"IsClosed\": true,\n      \"OrderNumber\": \"string\",\n      \"OrderDateTime\": \"2019-10-27T00:38:56.555Z\",\n      \"OrderDueDateTime\": \"2019-10-27T00:38:56.555Z\",\n      \"IsPaid\": true,\n      \"Customer\": {\n        \"CustomerId\": 0,\n        \"CustomerName\": \"string\",\n        \"Email\": \"string\",\n        \"PhoneNumber\": \"string\",\n        \"Address1\": \"string\",\n        \"Address2\": \"string\",\n        \"Address3\": \"string\",\n        \"City\": \"string\",\n        \"State\": \"string\",\n        \"ZipCode\": \"string\"\n      },\n      \"CustomerId\": 0,\n      \"CustomerName\": \"string\",\n      \"Email\": \"string\",\n      \"PhoneNumber\": \"string\",\n      \"TableReference\": \"string\",\n      \"TaxAmount\": 0,\n      \"TipAmount\": 0,\n      \"LineItems\": [\n        {\n          \"ExternalItemId\": \"" + itemNum +  "\",\n        \n          \"ItemName\": \"" + itemName + "\",\n          \"Quantity\": 1,\n          \"UnitPrice\": " + itemPrice +  ",\n          \"UnitSellPrice\": " + itemPrice + ",\n          \"ExtendedSellPrice\": " + itemPrice + ",\n          \n          \"Notes\": [\n            \"string\"\n          ],\n          \"BagName\": \"string\"\n        }\n      ],\n      \"Notes\": [\n        \"string\"\n      ],\n      \"KitchenLeadTimeInMinutes\": 0,\n      \"SkipReceipt\": true,\n      \"SkipKitchen\": true\n    }\n  ],\n  \"SourceApplicationName\": \"string\"\n}"
+    response = requests.request("POST", url, data=payload, headers=headers, params=querystring)
+    print(response.text)
 
 @app.route("/")
 def input():
@@ -52,6 +67,15 @@ def addToCart():
 	print(cartList)
 
 	return about()
+
+@app.route("/checkout")
+def checkout():
+    items = itemAPI.createIDDictFromCSV()
+    for item in cartList:
+        pushOrder(item, items)
+    cartList.clear()
+
+    return about()
 
 @app.route("/cart")
 def cart():

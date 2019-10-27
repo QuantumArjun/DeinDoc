@@ -47,5 +47,6 @@
       {%endif%}    
     {% endfor %}
  <p> Total price: ${{sum}} </p>
+ <a href= "{{ url_for('checkout') }}" class="btn btn-primary">Checkout</a>
 
 {% endblock content %}
