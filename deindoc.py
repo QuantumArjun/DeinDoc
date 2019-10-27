@@ -54,6 +54,10 @@ def input():
 def home():
     return render_template('home.html')
 
+@app.route("/checkoutpage")
+def checkoutpage():
+    return render_template('checkout.html')
+
 
 @app.route("/shop")
 def about():
@@ -76,7 +80,7 @@ def checkout():
             pushOrder(item, items)
     cartList.clear()
 
-    return about()
+    return checkoutpage()
 
 @app.route("/cart")
 def cart():
