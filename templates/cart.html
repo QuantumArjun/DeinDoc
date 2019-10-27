@@ -5,15 +5,16 @@
 
 
     <p> {{cartList}} </p>
+
     {% for doc in docs.keys() %}
     {%if doc in cartList %}
 
 <div class="col-sm-6">
           <div class="card" style="width: 18rem;">
-              <!--<img class="card-img-top" src="{{items[item].link}}" alt="Card image cap"> -->
+             
                 <div class="card-body">
                     <h5 class="card-title">{{docs[doc].name}}</h5>
-                    <p class="card-text"> ${{docs[doc].specialty}}</p>
+                    <p class="card-text"> Specialty: {{docs[doc].specialty}}</p>
                     
                  
                 </div>

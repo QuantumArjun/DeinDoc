@@ -55,7 +55,7 @@ def addToCart():
 
 @app.route("/cart")
 def cart():
-	return render_template('cart.html', items = itemAPI.createIDDictFromCSV(),cartList = cartList)
+	return render_template('cart.html', items = itemAPI.createIDDictFromCSV(), docs = docAPI.createDocIDDictFromCSV(), cartList = cartList)
 
 @app.route("/doc")
 def doc():
