@@ -6,11 +6,11 @@ def createDocDictFromCSV():
     items = {}
     df = pd.read_csv("Doctors.csv")
     for index, row in df.iterrows():
-        items[row['Name']] = Item(row['Name'], row['Rating'], row['Link'], row['Specialty'], row['Contact'])
+        items[row['Name']] = Doc(row['Name'], row['Rating'], row['Link'], row['Specialty'], row['Contact'])
     return items
 
 
-class Item:
+class Doc:
     def __init__(self, name, rating, link, specialty, contact):
         self.name = name
         self.rating = rating
