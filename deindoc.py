@@ -74,6 +74,11 @@ def addToCart():
 
 	return shop()
 
+@app.route("/checkoutpage")
+def checkoutpage():
+    return render_template('checkout.html')
+
+
 @app.route("/checkout")
 def checkout():
     items = itemAPI.createIDDictFromCSV()
@@ -82,7 +87,7 @@ def checkout():
             pushOrder(item, items)
     cartList.clear()
 
-    return shop()
+    return checkoutpage()
 
 @app.route("/cart")
 def cart():
