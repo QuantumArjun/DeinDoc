@@ -1,4 +1,4 @@
-# MediLink
+# MediLink - 3rd Place HackGT for Anthem's "Best Healthcare Marketplace" Award
 Note: The name of the repository, DeinDoc, comes from our original name for the project, DeinDoc (translates to "Your Doc" in German)
 
 ## Use it yourself
